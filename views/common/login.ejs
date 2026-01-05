@@ -1,0 +1,16 @@
+<%- include("navbar.ejs") %>
+<form action="/login_process" method="post">
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 border p-3 shadow">
+            <h3>Loin</h3>
+               <label for="name">Enter Email</label>
+               <input type="email" class="form-control" name="employee_email"><br>
+               <label for="name">Enter Password</label>
+               <input type="password" class="form-control" name="employee_password"><br>
+               <button class="btn btn-primary">Login</button>
+        </div>
+    </div>
+</div>
+</form>
+<%- include("footer.ejs") %>

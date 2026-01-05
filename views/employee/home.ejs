@@ -1,0 +1,241 @@
+<%- include("navbar.ejs") %>
+
+    
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Stats Section -->
+        <div class="row mb-5">
+            <div class="col-md-3">
+                <div class="card stats-card">
+                    <div class="stats-number">12</div>
+                    <div class="stats-label">Applications Sent</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stats-card">
+                    <div class="stats-number">4</div>
+                    <div class="stats-label">Interviews</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stats-card">
+                    <div class="stats-number">3</div>
+                    <div class="stats-label">Active Applications</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stats-card">
+                    <div class="stats-number">85%</div>
+                    <div class="stats-label">Profile Completeness</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Recommended Jobs -->
+            <div class="col-lg-8">
+                <h3 class="section-title">Recommended For You</h3>
+                
+                <div class="card job-card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h5 class="card-title">Senior Frontend Developer</h5>
+                                <p class="card-text text-muted mb-1">TechSolutions Inc.</p>
+                                <div class="mb-2">
+                                    <span class="badge bg-light text-dark me-2"><i class="fas fa-map-marker-alt me-1"></i>San Francisco, CA</span>
+                                    <span class="badge bg-light text-dark me-2"><i class="fas fa-clock me-1"></i>Full-time</span>
+                                    <span class="badge bg-light text-dark"><i class="fas fa-dollar-sign me-1"></i>$120k - $150k</span>
+                                </div>
+                                <p class="card-text">We're looking for an experienced frontend developer to join our growing team. You'll work on cutting-edge web applications using React, TypeScript, and modern CSS.</p>
+                            </div>
+                            <img src="https://via.placeholder.com/60" class="rounded" alt="Company Logo">
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <small class="text-muted">Posted 2 days ago</small>
+                            <div>
+                                <button class="btn btn-outline-primary btn-sm me-2">Save</button>
+                                <button class="btn btn-primary btn-sm">Apply Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card job-card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h5 class="card-title">UX/UI Designer</h5>
+                                <p class="card-text text-muted mb-1">CreativeMinds Agency</p>
+                                <div class="mb-2">
+                                    <span class="badge bg-light text-dark me-2"><i class="fas fa-map-marker-alt me-1"></i>Remote</span>
+                                    <span class="badge bg-light text-dark me-2"><i class="fas fa-clock me-1"></i>Contract</span>
+                                    <span class="badge bg-light text-dark"><i class="fas fa-dollar-sign me-1"></i>$45 - $65/hr</span>
+                                </div>
+                                <p class="card-text">Join our design team to create beautiful and functional user interfaces for web and mobile applications. Proficiency in Figma and Adobe Creative Suite required.</p>
+                            </div>
+                            <img src="https://via.placeholder.com/60" class="rounded" alt="Company Logo">
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <small class="text-muted">Posted 5 days ago</small>
+                            <div>
+                                <button class="btn btn-outline-primary btn-sm me-2">Save</button>
+                                <button class="btn btn-primary btn-sm">Apply Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card job-card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h5 class="card-title">Data Analyst</h5>
+                                <p class="card-text text-muted mb-1">DataInsight Corp</p>
+                                <div class="mb-2">
+                                    <span class="badge bg-light text-dark me-2"><i class="fas fa-map-marker-alt me-1"></i>New York, NY</span>
+                                    <span class="badge bg-light text-dark me-2"><i class="fas fa-clock me-1"></i>Full-time</span>
+                                    <span class="badge bg-light text-dark"><i class="fas fa-dollar-sign me-1"></i>$90k - $110k</span>
+                                </div>
+                                <p class="card-text">Seeking a data analyst to transform complex data into actionable insights. Experience with SQL, Python, and data visualization tools required.</p>
+                            </div>
+                            <img src="https://via.placeholder.com/60" class="rounded" alt="Company Logo">
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <small class="text-muted">Posted 1 week ago</small>
+                            <div>
+                                <button class="btn btn-outline-primary btn-sm me-2">Save</button>
+                                <button class="btn btn-primary btn-sm">Apply Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <button class="btn btn-outline-primary">View All Recommended Jobs</button>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Application Status -->
+                <div class="card status-card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Application Status</h5>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>TechSolutions Inc.</span>
+                                <span class="badge bg-warning">Under Review</span>
+                            </div>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar bg-warning" style="width: 50%"></div>
+                            </div>
+                            <small class="text-muted">Applied 5 days ago</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>CreativeMinds Agency</span>
+                                <span class="badge bg-success">Interview Scheduled</span>
+                            </div>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar bg-success" style="width: 75%"></div>
+                            </div>
+                            <small class="text-muted">Interview on Oct 15</small>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>DataInsight Corp</span>
+                                <span class="badge bg-info">Application Sent</span>
+                            </div>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar bg-info" style="width: 25%"></div>
+                            </div>
+                            <small class="text-muted">Applied yesterday</small>
+                        </div>
+                        
+                        <div class="text-center">
+                            <a href="#" class="btn btn-outline-primary btn-sm">View All Applications</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Profile Completion -->
+                <div class="card profile-card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Profile Completeness</h5>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Your profile is 85% complete</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-primary" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center ps-0">
+                                <span><i class="fas fa-check-circle text-success me-2"></i>Personal Information</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center ps-0">
+                                <span><i class="fas fa-check-circle text-success me-2"></i>Work Experience</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center ps-0">
+                                <span><i class="fas fa-check-circle text-success me-2"></i>Education</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center ps-0">
+                                <span><i class="fas fa-exclamation-circle text-warning me-2"></i>Skills</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Add</a>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center ps-0">
+                                <span><i class="fas fa-exclamation-circle text-warning me-2"></i>Portfolio</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Add</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Upcoming Events -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Upcoming Events</h5>
+                        <div class="d-flex mb-3">
+                            <div class="flex-shrink-0 bg-primary text-white rounded p-2 text-center me-3" style="width: 50px;">
+                                <div class="fw-bold">15</div>
+                                <div class="small">OCT</div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0">Interview with CreativeMinds</h6>
+                                <small class="text-muted">10:00 AM - 11:00 AM</small>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="flex-shrink-0 bg-success text-white rounded p-2 text-center me-3" style="width: 50px;">
+                                <div class="fw-bold">18</div>
+                                <div class="small">OCT</div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0">Career Fair - Tech Industry</h6>
+                                <small class="text-muted">9:00 AM - 4:00 PM</small>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 bg-info text-white rounded p-2 text-center me-3" style="width: 50px;">
+                                <div class="fw-bold">22</div>
+                                <div class="small">OCT</div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0">Webinar: Resume Writing Tips</h6>
+                                <small class="text-muted">2:00 PM - 3:30 PM</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <%- include("footer.ejs") %>

@@ -1,0 +1,481 @@
+<%- include("navbar.ejs") %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerConnect - Company Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #34495e;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .mission-section {
+            background-color: var(--light-color);
+            padding: 80px 0;
+        }
+        
+        .values-section .card {
+            border: none;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        
+        .values-section .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .values-section .card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .team-section {
+            padding: 80px 0;
+        }
+        
+        .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 5px solid var(--light-color);
+        }
+        
+        .stats-section {
+            background: linear-gradient(rgba(52, 152, 219, 0.9), rgba(41, 128, 185, 0.9)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-item .number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .services-section {
+            padding: 80px 0;
+        }
+        
+        .service-card {
+            border: none;
+            border-radius: 10px;
+            transition: all 0.3s;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .testimonials-section {
+            background-color: var(--light-color);
+            padding: 80px 0;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .contact-section {
+            padding: 80px 0;
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 40px 0;
+        }
+        
+        .footer-links a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+   
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Connecting Talent with Opportunity</h1>
+            <p class="lead mb-4">CareerConnect is a leading job portal dedicated to helping job seekers find their dream careers and employers discover exceptional talent.</p>
+            <a href="#contact" class="btn btn-primary btn-lg me-2">Get In Touch</a>
+            <a href="#services" class="btn btn-outline-light btn-lg">Our Services</a>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Our Mission</h2>
+                    <p class="lead">At CareerConnect, we believe that everyone deserves a job they love. Our mission is to bridge the gap between talented professionals and forward-thinking companies.</p>
+                    <p>Founded in 2015, we've helped over 50,000 job seekers find employment and partnered with more than 5,000 companies to fill their talent needs. Our platform uses advanced matching algorithms to ensure the right candidates connect with the right opportunities.</p>
+                    <p>We're committed to creating a more efficient, transparent, and rewarding job search experience for everyone involved.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Our Mission" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Our Values</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center p-4">
+                        <i class="fas fa-users"></i>
+                        <h4>Community</h4>
+                        <p>We foster a supportive community where job seekers and employers can connect, share insights, and grow together.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center p-4">
+                        <i class="fas fa-lightbulb"></i>
+                        <h4>Innovation</h4>
+                        <p>We continuously improve our platform with cutting-edge technology to enhance the job search and hiring experience.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center p-4">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Partnership</h4>
+                        <p>We build lasting relationships with both job seekers and employers, understanding their unique needs and challenges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-item">
+                        <div class="number">50K+</div>
+                        <div class="label">Jobs Filled</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-item">
+                        <div class="number">5K+</div>
+                        <div class="label">Partner Companies</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-item">
+                        <div class="number">200K+</div>
+                        <div class="label">Registered Users</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-item">
+                        <div class="number">15+</div>
+                        <div class="label">Industries Served</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title text-center">Meet Our Team</h2>
+            <p class="text-center mb-5">Our dedicated team of professionals is committed to making CareerConnect the best job portal experience.</p>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member">
+                        <h4>Michael Johnson</h4>
+                        <p class="text-muted">CEO & Founder</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member">
+                        <h4>Sarah Williams</h4>
+                        <p class="text-muted">CTO</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Team Member">
+                        <h4>David Chen</h4>
+                        <p class="text-muted">Head of Product</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Team Member">
+                        <h4>Emily Rodriguez</h4>
+                        <p class="text-muted">Marketing Director</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2 class="section-title text-center">Our Services</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card text-center p-4">
+                        <i class="fas fa-search"></i>
+                        <h4>Job Search</h4>
+                        <p>Advanced search filters, personalized recommendations, and easy application process for job seekers.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card text-center p-4">
+                        <i class="fas fa-briefcase"></i>
+                        <h4>Employer Solutions</h4>
+                        <p>Comprehensive recruitment tools, candidate matching, and employer branding solutions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card service-card text-center p-4">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Career Resources</h4>
+                        <p>Resume building, interview preparation, and career development resources for professionals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title text-center">What Our Users Say</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "CareerConnect helped me find my dream job in just two weeks! The platform is intuitive and the job matching is spot on."
+                        </div>
+                        <div class="testimonial-author">- Jennifer Lopez, Marketing Manager</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "As a hiring manager, CareerConnect has streamlined our recruitment process. We found qualified candidates faster than ever before."
+                        </div>
+                        <div class="testimonial-author">- Robert Kim, HR Director</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "The career resources on CareerConnect were invaluable during my job search. The resume builder and interview tips were especially helpful."
+                        </div>
+                        <div class="testimonial-author">- Thomas Wright, Software Developer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title text-center">Get In Touch</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h4>CareerConnect</h4>
+                    <p>Connecting talent with opportunity since 2015. Our mission is to make job searching and hiring simpler, faster, and more effective.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>Quick Links</h5>
+                    <div class="footer-links d-flex flex-column">
+                        <a href="#">Home</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Jobs</a>
+                        <a href="#">Employers</a>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Resources</h5>
+                    <div class="footer-links d-flex flex-column">
+                        <a href="#">Career Advice</a>
+                        <a href="#">Resume Builder</a>
+                        <a href="#">Interview Tips</a>
+                        <a href="#">Blog</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> 123 Career Street, Job City</p>
+                    <p><i class="fas fa-phone me-2"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope me-2"></i> info@careerconnect.com</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 CareerConnect. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-light me-3">Privacy Policy</a>
+                    <a href="#" class="text-light">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<%- include("footer.ejs") %>

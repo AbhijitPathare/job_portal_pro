@@ -1,0 +1,35 @@
+<%- include("navbar.ejs") %>
+<form action="/save_company" method="post">
+    <div class="container">
+        <div class="row justify-content-center mt-5 align-items-center">
+            <div class="col-md-6">
+            <h3>Company Registration</h3>
+            <br>
+            <label for="company_name">Company Name</label>
+            <input type="text" name="company_name" class="form-control" required>
+            <br>
+            Location 
+            <input type="text" name="company_location" class="form-control" required>
+            <br>
+            Hr Nmae
+            <input type="text" name="hr_name" class="form-control" required>
+            <br>
+            Hr Designation
+            <input type="text" name="hr_designation" class="form-control" required>
+            <br>
+            Hr Mobile
+            <input type="text" name="hr_mobile" class="form-control" required>
+            <br>
+            Hr Email
+            <input type="email" name="hr_email" class="form-control" required>
+            <br>
+            Hr Password
+            <input type="password" name="hr_password" class="form-control" required>
+            <br>
+            <button class="btn btn-primary">Register Now</button>
+        </div>
+        </div>
+    </div>
+
+</form>
+<%- include("footer.ejs") %>

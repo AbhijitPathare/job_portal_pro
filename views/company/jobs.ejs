@@ -1,0 +1,95 @@
+<%- include("navbar.ejs") %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Jobs - Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .action-buttons {
+            display: flex;
+            gap: 5px;
+        }
+        .btn-sm {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+        }
+        .add-job-btn {
+            margin-bottom: 20px;
+        }
+        .table th {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-between align-items-center">
+                   
+                 <h2>My Jobs</h2>
+                    <a href="/company/add_job" class="btn btn-success add-job-btn">Add New Job</a>
+                </div><br><br>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>SrNo</th>
+                            <th>Job Title</th>
+                            <th>Job Description</th>
+                            <th>Job type</th>
+                            <th>Experience Min</th>
+                            <th>Application</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i = 0; i < jobs.length; i++) { %>
+                            <tr>
+                                <td>
+                                    <div class="action-buttons">
+                                        <a href="/company/edit_job/<%=jobs[i].job_id %>" class="btn btn-primary btn-sm">Edit</a>
+                                        <a href="/company/delete_job/<%=jobs[i].job_id %>" class="btn btn-danger btn-sm" >Delete</a>
+                                    </div>
+                                </td>
+                                <td><%= i+1 %></td>
+                                <td><%= jobs[i].job_title %></td>
+                                <td><%= jobs[i].job_description %></td>
+                                <td><%= jobs[i].job_type %></td>
+                                <td>
+                                    <%= jobs[i].experience_min %> -
+                                    <%= jobs[i].experience_max %> Years
+                                </td>
+                                <td>
+                                    <a href="/company/applications/<%=jobs[i].job_id %>" class="btn btn-info btn-sm">View Applications</a>
+                                </td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+<br><br><br><br><br>
+    <!-- Footer (placeholder) -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2023 JobPortal. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                    <a href="#" class="text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<%- include("footer.ejs") %>

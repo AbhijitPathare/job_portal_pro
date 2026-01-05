@@ -1,0 +1,35 @@
+<%- include("navbar.ejs") %>
+<form action="/company/save_job" method="post">
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 border p-3 rounded shadow">
+            <h3>Post New Job</h3>
+            Job Title
+            <input type="text" class="form-control" name="job_title"/> <br>
+            Job Description
+            <textarea class="form-control" name="job_description"></textarea> <br>
+            Job type
+            <select class="form-control" name="job_type">
+                <option value="Full-time">Full-Time</option>
+                <option value="Part-time">Part-Time</option>
+                <option value="Internship">Internship</option>
+                <option value="Internship">Contract</option>
+                <option value="Internship">Remote</option>
+            </select><br>
+           Enter Minimum Experience
+           <input type="number" class="form-control" name="experience_min"/><br>
+           Enter Maximum Experience 
+              <input type="number" class="form-control" name="experience_max"/><br>
+           Skills Required
+           <input type="text" class="form-control" name="skills"/><br>
+           Vacancies
+           <input type="number" class="form-control" name="vacancies"/><br>
+           Reference Link
+              <input type="text" class="form-control" name="reference_link"/><br>
+           <button class="btn btn-primary">Post Job</button>
+            
+       </div>
+    </div>
+</div>
+</form>
+<%- include("footer.ejs") %>

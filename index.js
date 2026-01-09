@@ -24,4 +24,4 @@ app.use("/employee", employee_route);
 app.use("/company", company_route);
 app.use("/admin", admin_route);
 
-app.listen(process.env.PORT || 1200);
+app.listen(process.env.PORT) ;
